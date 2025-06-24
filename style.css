@@ -18,6 +18,10 @@ h1 {
     text-shadow: 2px 2px 8px #ff0000;
 }
 
+.logo {
+    width: 30%;
+}
+
 .subtitulo {
     font-size: 1.4rem;
     color: #ccc;
