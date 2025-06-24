@@ -14,12 +14,14 @@ header {
 header img{
     display: block;
     position: absolute;
-    top: -40px;
     left: 0px;
+    height: auto;
+    width: 45px;
 }
 
 h1 {
     display: block;
+    position: absolute;
     font-size: 3.5rem;
     color: #f30101;
     text-shadow: 2px 2px 8px #ff0000;
