@@ -11,6 +11,12 @@ header {
     padding: 2rem;
     background: linear-gradient(to right, #111, #222);
 }
+header img{
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
 
 h1 {
     font-size: 3.5rem;
