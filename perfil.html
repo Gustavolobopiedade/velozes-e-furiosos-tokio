@@ -8,37 +8,32 @@
 </head>
 <body>
     <header>
-         <div class="form-container">
+        <div class="form-container">
         <h1>Crie Seu Perfil de Filmes</h1>
-        <form action="#" method="POST">
-            <!-- Campo de Idade -->
+        <form id="profileForm">
+            <!-- Nome -->
+            <div class="input-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+            </div>
+
+            <!-- Email -->
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+            </div>
+
+            <!-- Idade -->
             <div class="input-group">
                 <label for="age">Idade:</label>
                 <input type="number" id="age" name="age" placeholder="Digite sua idade" required>
             </div>
 
-            <!-- Seleção de Gêneros de Filmes -->
-            <div class="input-group">
-                <label>Gêneros de Filme Preferidos:</label>
+            <!-- Gêneros de Filmes -->
+            <div class="input-group" id="genreSection" style="display: none;">
+                <label>Gêneros de Filmes Preferidos:</label>
                 <div class="checkbox-group">
-                    <label>
-                        <input type="checkbox" name="genres" value="acao"> Ação
-                    </label>
-                    <label>
-                        <input type="checkbox" name="genres" value="drama"> Drama
-                    </label>
-                    <label>
-                        <input type="checkbox" name="genres" value="comedia"> Comédia
-                    </label>
-                    <label>
-                        <input type="checkbox" name="genres" value="suspense"> Suspense
-                    </label>
-                    <label>
-                        <input type="checkbox" name="genres" value="romance"> Romance
-                    </label>
-                    <label>
-                        <input type="checkbox" name="genres" value="aventura"> Aventura
-                    </label>
+                    <!-- Gêneros de filmes serão injetados aqui pelo JavaScript -->
                 </div>
             </div>
 
@@ -46,8 +41,52 @@
             <button type="submit">Salvar Perfil</button>
         </form>
     </div>
-    
 
+    <script>
+        document.getElementById('age').addEventListener('input', function () {
+            const age = parseInt(this.value);
+            const genreSection = document.getElementById('genreSection');
+            const checkboxGroup = document.querySelector('.checkbox-group');
+            
+            // Limpa os checkboxes anteriores
+            checkboxGroup.innerHTML = '';
+
+            // Exibe diferentes gêneros com base na idade
+            if (age >= 18) {
+                genreSection.style.display = 'block';
+                checkboxGroup.innerHTML = `
+                    <label><input type="checkbox" name="genres" value="acao"> Ação</label>
+                    <label><input type="checkbox" name="genres" value="drama"> Drama</label>
+                    <label><input type="checkbox" name="genres" value="comedia"> Comédia</label>
+                    <label><input type="checkbox" name="genres" value="romance"> Romance</label>
+                    <label><input type="checkbox" name="genres" value="terror"> Terror</label>
+                    <label><input type="checkbox" name="genres" value="aventura"> Aventura</label>
+                `;
+            } else if (age >= 13 && age < 18) {
+                genreSection.style.display = 'block';
+                checkboxGroup.innerHTML = `
+                    <label><input type="checkbox" name="genres" value="acao"> Ação</label>
+                    <label><input type="checkbox" name="genres" value="drama"> Drama</label>
+                    <label><input type="checkbox" name="genres" value="comedia"> Comédia</label>
+                    <label><input type="checkbox" name="genres" value="aventura"> Aventura</label>
+                `;
+            } else if (age >= 6 && age < 13) {
+                genreSection.style.display = 'block';
+                checkboxGroup.innerHTML = `
+                    <label><input type="checkbox" name="genres" value="animacao"> Animação</label>
+                    <label><input type="checkbox" name="genres" value="aventura"> Aventura</label>
+                    <label><input type="checkbox" name="genres" value="comedia"> Comédia</label>
+                `;
+            } else {
+                genreSection.style.display = 'none';
+            }
+        });
+
+        document.getElementById('profileForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert("Perfil salvo com sucesso!");
+        });
+    </script>
 
     </header>
 </body>
