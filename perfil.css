@@ -10,6 +10,21 @@ body {
     height: 100vh;
 }
 
+
+header {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to right, #111, #222);
+}
+
+
+h1 {
+    display: block;
+    font-size: 3.5rem;
+    color: #f30101;
+    text-shadow: 2px 2px 8px #ff0000;
+}
+
 /* Container do formulário */
 .form-container {
     background-color: #333;
