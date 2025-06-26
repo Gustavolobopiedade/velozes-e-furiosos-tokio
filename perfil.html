@@ -8,25 +8,45 @@
 </head>
 <body>
     <header>
-  <div class="form-container">
-        <h1>Formulário de Contato</h1>
+         <div class="form-container">
+        <h1>Crie Seu Perfil de Filmes</h1>
         <form action="#" method="POST">
+            <!-- Campo de Idade -->
             <div class="input-group">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+                <label for="age">Idade:</label>
+                <input type="number" id="age" name="age" placeholder="Digite sua idade" required>
             </div>
+
+            <!-- Seleção de Gêneros de Filmes -->
             <div class="input-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                <label>Gêneros de Filme Preferidos:</label>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="genres" value="acao"> Ação
+                    </label>
+                    <label>
+                        <input type="checkbox" name="genres" value="drama"> Drama
+                    </label>
+                    <label>
+                        <input type="checkbox" name="genres" value="comedia"> Comédia
+                    </label>
+                    <label>
+                        <input type="checkbox" name="genres" value="suspense"> Suspense
+                    </label>
+                    <label>
+                        <input type="checkbox" name="genres" value="romance"> Romance
+                    </label>
+                    <label>
+                        <input type="checkbox" name="genres" value="aventura"> Aventura
+                    </label>
+                </div>
             </div>
-            <div class="input-group">
-                <label for="message">Mensagem:</label>
-                <textarea id="message" name="message" placeholder="Digite sua mensagem" required></textarea>
-            </div>
-            <button type="submit">Enviar</button>
+
+            <!-- Botão de Envio -->
+            <button type="submit">Salvar Perfil</button>
         </form>
     </div>
-
+    
 
 
     </header>
